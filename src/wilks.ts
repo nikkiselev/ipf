@@ -16,7 +16,7 @@ const femaleCoefficients = {
   f: -9.054e-8,
 }
 
-const coefficient = (weight, gender) => {
+const coefficient = (weight: number, gender: Gender) => {
   const { a, b, c, d, e, f } =
     gender === 'male' ? maleCoefficients : femaleCoefficients
 
