@@ -1,4 +1,5 @@
 import { Gender, Wilks } from './types'
+import kg2lbs from './libs/kg2lbs'
 
 const coefficients = {
   male: [
@@ -33,7 +34,13 @@ const coefficient = (weight: number, gender: Gender) => {
   )
 }
 
-const wilks: Wilks = (bodyWeight, liftedWeight, gender) =>
-  parseFloat((liftedWeight * coefficient(bodyWeight, gender)).toFixed(2))
+const wilks: Wilks = (bodyWeight, liftedWeight, gender, unitType = 'kg') => {
+  if (unitType === 'lb') {
+    bodyWeight = kg2lbs(bodyWeight)
+    liftedWeight = kg2lbs(liftedWeight)
+  }
+
+  return parseFloat((liftedWeight * coefficient(bodyWeight, gender)).toFixed(2))
+}
 
 export default wilks
