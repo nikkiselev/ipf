@@ -1,3 +1,1 @@
-export type Example = {
-  data: string
-}
+export type Gender = 'male' | 'female'

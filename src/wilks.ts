@@ -1,3 +1,5 @@
+import { Gender } from './types'
+
 const maleCoefficients = {
   a: -216.0475144,
   b: 16.2606339,
@@ -30,8 +32,6 @@ const coefficient = (weight: number, gender: Gender) => {
       f * weight ** 5)
   )
 }
-
-type Gender = 'male' | 'female'
 
 const wilks = (bodyWeight: number, liftedWeight: number, gender: Gender) => {
   return parseFloat((liftedWeight * coefficient(bodyWeight, gender)).toFixed(2))
