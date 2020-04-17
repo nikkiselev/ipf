@@ -1,5 +1,5 @@
 {
-  "name": "@nikkiselev/pkg",
+  "name": "@nikkiselev/pw",
   "version": "1.0.0",
   "description": "TypeScript starter template for creating a Node.js package",
   "keywords": [
@@ -15,8 +15,8 @@
     "esm/**"
   ],
   "author": "Nikolai Kiselev <nik@kiselev.dev> (https://github.com/nikkiselev)",
-  "repository": "nikkiselev/pkg",
-  "homepage": "https://github.com/nikkiselev/pkg",
+  "repository": "nikkiselev/pw",
+  "homepage": "https://github.com/nikkiselev/pw",
   "license": "MIT",
   "scripts": {
     "dev": "npm run watch",
