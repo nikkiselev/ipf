@@ -33,8 +33,5 @@ const coefficient = (weight: number, gender: Gender) => {
   )
 }
 
-const wilks = (bodyWeight: number, liftedWeight: number, gender: Gender) => {
-  return parseFloat((liftedWeight * coefficient(bodyWeight, gender)).toFixed(2))
-}
-
-export default wilks
+export default (bodyWeight: number, liftedWeight: number, gender: Gender) =>
+  parseFloat((liftedWeight * coefficient(bodyWeight, gender)).toFixed(2))
