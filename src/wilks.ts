@@ -1,4 +1,4 @@
-import { Gender } from './types'
+import { Gender, Wilks } from './types'
 
 const coefficients = {
   male: [
@@ -33,5 +33,7 @@ const coefficient = (weight: number, gender: Gender) => {
   )
 }
 
-export default (bodyWeight: number, liftedWeight: number, gender: Gender) =>
+const wilks: Wilks = (bodyWeight, liftedWeight, gender) =>
   parseFloat((liftedWeight * coefficient(bodyWeight, gender)).toFixed(2))
+
+export default wilks
