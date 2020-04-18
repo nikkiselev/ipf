@@ -1,13 +1,13 @@
 import { Gender, Unit } from './types'
 import kg2lbs from './libs/kg2lbs'
 
-const coefficients = {
+const params = {
   m: [-1.093e-6, 7.391293e-4, -0.1918759221, 24.0900756, -307.75076],
-  f: [-0.0000010706, 0.0005158568, -0.1126655495, 13.6175032, -57.96288],
+  f: [-1.0706e-6, 5.158568e-4, -0.1126655495, 13.6175032, -57.96288],
 }
 
 const coefficient = (weight: number, gender: Gender) => {
-  const c = coefficients[gender]
+  const c = params[gender]
   const w = weight
   const numerator = 500
 
