@@ -1,5 +1,5 @@
 {
-  "name": "@nikkiselev/powerlifting-calc",
+  "name": "@nikkiselev/powerlifting-formulas",
   "version": "1.0.0",
   "description": "TypeScript starter template for creating a Node.js package",
   "keywords": [
@@ -15,8 +15,8 @@
     "esm/**"
   ],
   "author": "Nikolai Kiselev <nik@kiselev.dev> (https://github.com/nikkiselev)",
-  "repository": "nikkiselev/powerlifting-calc",
-  "homepage": "https://github.com/nikkiselev/powerlifting-calc",
+  "repository": "nikkiselev/powerlifting-formulas",
+  "homepage": "https://github.com/nikkiselev/powerlifting-formulas",
   "license": "MIT",
   "scripts": {
     "dev": "npm run watch",
