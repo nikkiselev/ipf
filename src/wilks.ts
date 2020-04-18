@@ -49,16 +49,9 @@ const paramsV2 = {
 const coefficient = (weight: number, gender: Gender, version = 2) => {
   const c = version === 2 ? paramsV2[gender] : paramsV1[gender]
   const numerator = version === 2 ? 600 : 500
-  const w = weight
-
   return (
     numerator /
-    (c[0] * w ** 5 +
-      c[1] * w ** 4 +
-      c[2] * w ** 3 +
-      c[3] * w ** 2 +
-      c[4] * w +
-      c[5])
+    c.reduce((a, b, key) => a + b * weight ** (c.length - key - 1), 0)
   )
 }
 
