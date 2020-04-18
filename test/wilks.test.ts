@@ -15,7 +15,6 @@ describe('wilks', () => {
 
   it('should calculate in pounds if specified', async () => {
     expect(wilks2(137, 882, 'female', 'lb')).toBe(515.92)
-    // or 516.37
   })
 })
 
