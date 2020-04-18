@@ -39,9 +39,10 @@ const coefficients = {
   ],
 }
 
-const coefficient = (weight: number, gender: Gender, legacy = false) => {
-  const c = legacy ? coefficientsBefore2020[gender] : coefficients[gender]
-  const numerator = legacy ? 500 : 600
+const coefficient = (weight: number, gender: Gender, version = 2) => {
+  const c =
+    version === 2 ? coefficients[gender] : coefficientsBefore2020[gender]
+  const numerator = version === 2 ? 600 : 500
 
   return (
     numerator /
@@ -62,7 +63,7 @@ export const wilks2: Wilks = (
   liftedWeight,
   gender,
   unitType = 'kg',
-  legacy = false
+  version = 2
 ) => {
   if (unitType === 'lb') {
     bodyWeight = kg2lbs(bodyWeight)
@@ -70,7 +71,7 @@ export const wilks2: Wilks = (
   }
 
   return parseFloat(
-    (liftedWeight * coefficient(bodyWeight, gender, legacy)).toFixed(2)
+    (liftedWeight * coefficient(bodyWeight, gender, version)).toFixed(2)
   )
 }
 
@@ -82,4 +83,4 @@ export const wilks: Wilks = (
   liftedWeight,
   gender,
   unitType = 'kg'
-) => wilks2(bodyWeight, liftedWeight, gender, unitType, true)
+) => wilks2(bodyWeight, liftedWeight, gender, unitType, 1)
