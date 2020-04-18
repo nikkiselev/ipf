@@ -1,7 +1,10 @@
 import { Gender, Wilks } from './types'
 import kg2lbs from './libs/kg2lbs'
 
-const paramsBefore2020 = {
+/**
+ * Coefficients for Wilks v.1 before 2020
+ */
+const paramsV1 = {
   m: [
     -216.0475144,
     16.2606339,
@@ -20,7 +23,10 @@ const paramsBefore2020 = {
   ],
 }
 
-const params = {
+/**
+ * Coefficients for Wilks v.2 2020
+ */
+const paramsV2 = {
   m: [
     47.4617885411949,
     8.47206137941125,
@@ -40,7 +46,7 @@ const params = {
 }
 
 const coefficient = (weight: number, gender: Gender, version = 2) => {
-  const c = version === 2 ? params[gender] : paramsBefore2020[gender]
+  const c = version === 2 ? paramsV2[gender] : paramsV1[gender]
   const numerator = version === 2 ? 600 : 500
   const w = weight
 
