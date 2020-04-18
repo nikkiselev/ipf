@@ -1,6 +1,8 @@
+import { dots } from '../src/index'
+
 describe('DOTS', () => {
   it('should calculate DOTS points for males', async () => {
-    expect(dots(80.5, 700, 'm')).toBe(480.92)
+    expect(dots(80, 700, 'm')).toBe(482.68)
   })
 
   it('should calculate DOTS points for females', async () => {
@@ -12,7 +14,6 @@ describe('DOTS', () => {
   })
 
   it('should calculate DOTS points in pounds if specified', async () => {
-    expect(dots(137, 882, 'f', 'lb')).toBe(433.8)
-    // or 516.37
+    expect(dots(137, 882, 'f', 'lb')).toBe(433.91)
   })
 })
