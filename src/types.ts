@@ -6,5 +6,6 @@ export type Wilks = (
   bodyWeight: number,
   liftedWeight: number,
   gender: Gender,
-  unitType?: Unit
+  unitType?: Unit,
+  legacy?: boolean
 ) => number
