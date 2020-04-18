@@ -1,6 +1,7 @@
-import { Gender, Wilks } from './types'
+import { Wilks } from './types'
 import kg2lbs from './libs/kg2lbs'
 import format from './libs/format'
+import coefficient from './libs/coefficient'
 
 /**
  * Coefficients for Wilks v.1 before 2020
@@ -46,15 +47,6 @@ const paramsV2 = {
   ],
 }
 
-const coefficient = (weight: number, gender: Gender, version = 2) => {
-  const c = version === 2 ? paramsV2[gender] : paramsV1[gender]
-  const numerator = version === 2 ? 600 : 500
-  return (
-    numerator /
-    c.reduce((a, b, key) => a + b * weight ** (c.length - key - 1), 0)
-  )
-}
-
 /**
  * Wilks v.2 - 2020
  */
@@ -70,7 +62,10 @@ export const wilks2: Wilks = (
     liftedWeight = kg2lbs(liftedWeight)
   }
 
-  return format(liftedWeight * coefficient(bodyWeight, gender, version))
+  const params = version === 2 ? paramsV2[gender] : paramsV1[gender]
+  const numerator = version === 2 ? 600 : 500
+
+  return format(liftedWeight * coefficient(bodyWeight, params, numerator))
 }
 
 /**
