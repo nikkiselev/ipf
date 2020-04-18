@@ -1,5 +1,6 @@
 import { Gender, Unit } from './types'
 import kg2lbs from './libs/kg2lbs'
+import format from './libs/format'
 
 const params = {
   m: [-1.093e-6, 7.391293e-4, -0.1918759221, 24.0900756, -307.75076],
@@ -28,7 +29,7 @@ export const dots = (
     liftedWeight = kg2lbs(liftedWeight)
   }
 
-  return parseFloat((liftedWeight * coefficient(bodyWeight, gender)).toFixed(2))
+  return format(liftedWeight * coefficient(bodyWeight, gender))
 }
 
 export default dots

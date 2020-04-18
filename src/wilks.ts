@@ -1,5 +1,6 @@
 import { Gender, Wilks } from './types'
 import kg2lbs from './libs/kg2lbs'
+import format from './libs/format'
 
 /**
  * Coefficients for Wilks v.1 before 2020
@@ -76,9 +77,7 @@ export const wilks2: Wilks = (
     liftedWeight = kg2lbs(liftedWeight)
   }
 
-  return parseFloat(
-    (liftedWeight * coefficient(bodyWeight, gender, version)).toFixed(2)
-  )
+  return format(liftedWeight * coefficient(bodyWeight, gender, version))
 }
 
 /**
