@@ -1,4 +1,4 @@
-import { wilks } from '../src/index'
+import { wilks, wilksOld } from '../src/index'
 
 describe('wilks', () => {
   it('should calculate the score for males', async () => {
@@ -33,6 +33,6 @@ describe('wilks before 2020', () => {
   })
 
   it('should calculate in pounds if specified', async () => {
-    expect(wilksOld(137, 882, 'female', 'lb')).toBe(434.15)
+    expect(wilksOld(137, 882, 'female', 'lb')).toBe(434.16)
   })
 })

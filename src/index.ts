@@ -1,3 +1,3 @@
-export { default as wilks } from './wilks'
+export { wilks, wilksOld } from './wilks'
 
 export default {}
