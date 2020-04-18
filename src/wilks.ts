@@ -2,7 +2,7 @@ import { Gender, Wilks } from './types'
 import kg2lbs from './libs/kg2lbs'
 
 const coefficientsBefore2020 = {
-  male: [
+  m: [
     -216.0475144,
     16.2606339,
     -0.002388645,
@@ -10,7 +10,7 @@ const coefficientsBefore2020 = {
     7.01863e-6,
     -1.291e-8,
   ],
-  female: [
+  f: [
     594.31747775582,
     -27.23842536447,
     0.82112226871,
@@ -21,7 +21,7 @@ const coefficientsBefore2020 = {
 }
 
 const coefficients = {
-  male: [
+  m: [
     47.4617885411949,
     8.47206137941125,
     0.073694103462609,
@@ -29,7 +29,7 @@ const coefficients = {
     7.07665973070743e-6,
     -1.20804336482315e-8,
   ],
-  female: [
+  f: [
     -125.425539779509,
     13.7121941940668,
     -0.0330725063103405,

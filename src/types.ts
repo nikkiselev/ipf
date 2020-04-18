@@ -1,4 +1,4 @@
-export type Gender = 'male' | 'female'
+export type Gender = 'm' | 'f'
 
 export type Unit = 'kg' | 'lb'
 
