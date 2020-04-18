@@ -1,7 +1,3 @@
-export default (weight: number, params: any, numerator: number) =>
+export default (weight: number, params: number[], numerator: number) =>
   numerator /
-  params.reduce(
-    (a: any, b: any, key: number) =>
-      a + b * weight ** (params.length - key - 1),
-    0
-  )
+  params.reduce((a, b, key) => a + b * weight ** (params.length - key - 1), 0)
