@@ -54,7 +54,10 @@ const coefficient = (weight: number, gender: Gender, legacy = false) => {
   )
 }
 
-export const wilks: Wilks = (
+/**
+ * Wilks v.2 - 2020
+ */
+export const wilks2: Wilks = (
   bodyWeight,
   liftedWeight,
   gender,
@@ -71,9 +74,12 @@ export const wilks: Wilks = (
   )
 }
 
-export const wilksOld: Wilks = (
+/**
+ * Wilks v.1 - before 2020
+ */
+export const wilks: Wilks = (
   bodyWeight,
   liftedWeight,
   gender,
   unitType = 'kg'
-) => wilks(bodyWeight, liftedWeight, gender, unitType, true)
+) => wilks2(bodyWeight, liftedWeight, gender, unitType, true)
