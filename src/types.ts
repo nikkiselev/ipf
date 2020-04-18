@@ -9,3 +9,10 @@ export type Wilks = (
   unitType?: Unit,
   version?: number
 ) => number
+
+export type DOTS = (
+  bodyWeight: number,
+  liftedWeight: number,
+  gender: Gender,
+  unitType?: Unit
+) => number

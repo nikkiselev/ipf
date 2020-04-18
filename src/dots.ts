@@ -1,4 +1,4 @@
-import { Gender, Unit } from './types'
+import { Gender, DOTS } from './types'
 import kg2lbs from './libs/kg2lbs'
 import format from './libs/format'
 
@@ -18,11 +18,11 @@ const coefficient = (weight: number, gender: Gender) => {
   )
 }
 
-export const dots = (
-  bodyWeight: number,
-  liftedWeight: number,
-  gender: Gender,
-  unitType: Unit = 'kg'
+export const dots: DOTS = (
+  bodyWeight,
+  liftedWeight,
+  gender,
+  unitType = 'kg'
 ) => {
   if (unitType === 'lb') {
     bodyWeight = kg2lbs(bodyWeight)
