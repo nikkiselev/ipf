@@ -6,15 +6,15 @@ describe('wilks', () => {
   })
 
   it('should calculate the score for females', async () => {
-    expect(wilks(62.15, 400, 'female')).toBe(515.8)
+    expect(wilks(62.15, 400, 'female')).toBe(515.79)
   })
 
   it('should calculate in kg by default', async () => {
-    expect(wilks(62.15, 400, 'female')).toBe(515.8)
+    expect(wilks(62.15, 400, 'female')).toBe(515.79)
   })
 
   it('should calculate in pounds if specified', async () => {
-    expect(wilks(137, 882, 'female', 'lb')).toBe(515.93)
+    expect(wilks(137, 882, 'female', 'lb')).toBe(515.92)
     // or 516.37
   })
 })
