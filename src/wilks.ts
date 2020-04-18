@@ -2,7 +2,7 @@ import { Gender, Wilks } from './types'
 import kg2lbs from './libs/kg2lbs'
 
 const coefficientsBefore2020 = {
-  male: [
+  m: [
     -216.0475144,
     16.2606339,
     -0.002388645,
@@ -10,7 +10,7 @@ const coefficientsBefore2020 = {
     7.01863e-6,
     -1.291e-8,
   ],
-  female: [
+  f: [
     594.31747775582,
     -27.23842536447,
     0.82112226871,
@@ -21,7 +21,7 @@ const coefficientsBefore2020 = {
 }
 
 const coefficients = {
-  male: [
+  m: [
     47.4617885411949,
     8.47206137941125,
     0.073694103462609,
@@ -29,7 +29,7 @@ const coefficients = {
     7.07665973070743e-6,
     -1.20804336482315e-8,
   ],
-  female: [
+  f: [
     -125.425539779509,
     13.7121941940668,
     -0.0330725063103405,
@@ -39,9 +39,10 @@ const coefficients = {
   ],
 }
 
-const coefficient = (weight: number, gender: Gender, legacy = false) => {
-  const c = legacy ? coefficientsBefore2020[gender] : coefficients[gender]
-  const numerator = legacy ? 500 : 600
+const coefficient = (weight: number, gender: Gender, version = 2) => {
+  const c =
+    version === 2 ? coefficients[gender] : coefficientsBefore2020[gender]
+  const numerator = version === 2 ? 600 : 500
 
   return (
     numerator /
@@ -54,12 +55,15 @@ const coefficient = (weight: number, gender: Gender, legacy = false) => {
   )
 }
 
-export const wilks: Wilks = (
+/**
+ * Wilks v.2 - 2020
+ */
+export const wilks2: Wilks = (
   bodyWeight,
   liftedWeight,
   gender,
   unitType = 'kg',
-  legacy = false
+  version = 2
 ) => {
   if (unitType === 'lb') {
     bodyWeight = kg2lbs(bodyWeight)
@@ -67,13 +71,16 @@ export const wilks: Wilks = (
   }
 
   return parseFloat(
-    (liftedWeight * coefficient(bodyWeight, gender, legacy)).toFixed(2)
+    (liftedWeight * coefficient(bodyWeight, gender, version)).toFixed(2)
   )
 }
 
-export const wilksOld: Wilks = (
+/**
+ * Wilks v.1 - before 2020
+ */
+export const wilks: Wilks = (
   bodyWeight,
   liftedWeight,
   gender,
   unitType = 'kg'
-) => wilks(bodyWeight, liftedWeight, gender, unitType, true)
+) => wilks2(bodyWeight, liftedWeight, gender, unitType, 1)

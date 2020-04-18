@@ -1,4 +1,4 @@
-export type Gender = 'male' | 'female'
+export type Gender = 'm' | 'f'
 
 export type Unit = 'kg' | 'lb'
 
@@ -7,5 +7,5 @@ export type Wilks = (
   liftedWeight: number,
   gender: Gender,
   unitType?: Unit,
-  legacy?: boolean
+  version?: number
 ) => number
