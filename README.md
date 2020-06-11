@@ -1,40 +1,56 @@
 
 
-# PKG
+# Powerlifting formulas for calculating relative strength
 
-TypeScript starter template for creating a Node.js package.
+Calculate relative scores in IPF powerlifting competitions.
 
-It uses TypeScript compiler to build modules and compiles the entire package into a single file.
+- Wilks
+- Wilks-2 (2020)
+- DOTS
 
+## Installation
 
-## Getting Started
-
- 1. [Use this template](https://github.com/nikkiselev/pkg/generate)
- 2. Change `author`,  `repository` and `homepage` in  `package.json`.
- 3.  Install dev dependencies with `npm i`
-
-## Usage
-
-Run the compiler in watch mode:
 ````
-npm run dev
+npm i @nikkiselev/ipf
 ````
+## Examples
 
-Build the project:
-````
-npm run build
-````
+### Wilks-2 (2020)
 
-Run tests:
 ````
-npm run test
+// 93 kg male that lifted 700 kg in total
+wilks2(93, 700, 'm')
+
+// 61 kg female that lifted 500 kg in total
+wilks2(61, 500, 'f')
+
+// 137 lb female that lifted 882 lb in total
+wilks2(137, 882, 'f', 'lb')
 ````
 
-Prepare before publishing:
+### Wilks (before 2020)
+
 ````
-npm run prepare
+// 93 kg male that lifted 700 kg in total
+wilks(93, 700, 'm')
+
+// 61 kg female that lifted 500 kg in total
+wilks(61, 500, 'f')
+
+// 137 lb female that lifted 882 lb in total
+wilks(137, 882, 'f', 'lb')
 ````
 
-## Customizing
+### DOTS formula
 
-Adjust settings in `tsconfig.json`, `.prettierrc`, `.eslintrc.json` for your preferences.	
+````
+// 93 kg male that lifted 700 kg in total
+dots(93, 700, 'm')
+
+// 61 kg female that lifted 500 kg in total
+dots(61, 500, 'f')
+
+// 137 lb female that lifted 882 lb in total
+dots(137, 882, 'f', 'lb')
+````
+
