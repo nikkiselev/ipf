@@ -1,11 +1,12 @@
 {
   "name": "@nikkiselev/ipf",
-  "version": "1.0.0",
-  "description": "TypeScript starter template for creating a Node.js package",
+  "version": "1.0.1",
+  "description": "Calculate relative scores in IPF powerlifting competitions.",
   "keywords": [
-    "typescript",
-    "node",
-    "template"
+    "powerlifting",
+    "ipf",
+    "wilks",
+    "dots"
   ],
   "main": "./dist/index.js",
   "module": "./esm/index.js",
