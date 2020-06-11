@@ -1,5 +1,3 @@
-
-
 # IPF
 
 Calculate relative scores in IPF powerlifting competitions.
@@ -17,6 +15,8 @@ npm i @nikkiselev/ipf
 ### Wilks-2 (2020)
 
 ```typescript
+import { wilks2 } from '@nikkiselev/ipf'
+
 // 93 kg male that lifted 700 kg in total
 wilks2(93, 700, 'm')
 
@@ -30,6 +30,8 @@ wilks2(137, 882, 'f', 'lb')
 ### Wilks (before 2020)
 
 ```typescript
+import { wilks } from '@nikkiselev/ipf'
+
 // 93 kg male that lifted 700 kg in total
 wilks(93, 700, 'm')
 
@@ -43,6 +45,8 @@ wilks(137, 882, 'f', 'lb')
 ### DOTS formula
 
 ```typescript
+import { dots } from '@nikkiselev/ipf'
+
 // 93 kg male that lifted 700 kg in total
 dots(93, 700, 'm')
 
@@ -52,4 +56,19 @@ dots(61, 500, 'f')
 // 137 lb female that lifted 882 lb in total
 dots(137, 882, 'f', 'lb')
 ```
+
+### API
+
+`wilks`, `wilks2` and `dots` share the same interface.
+
+```typescript
+wilks(bodyWeight, liftedWeight, gender, unitType)
+```
+
+- **bodyWeight**: number
+- **liftedWeight**: number
+- **gender**: `'m'` - male, `'f'` - female
+- **unitType**: `'kg'` - in kilograms, `'lb'` in pounds. Optional.
+
+
 
