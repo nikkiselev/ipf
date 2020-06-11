@@ -71,8 +71,8 @@ wilks(bodyWeight, liftedWeight, gender, unitType)
 
 - **bodyWeight**: number
 - **liftedWeight**: number
-- **gender**: `'m'` - male, `'f'` - female
-- **unitType**: `'kg'` - in kilograms, `'lb'` in pounds. Optional.
+- **gender**: `m` - male, `f` - female
+- **unitType**: `kg` - in kilograms, `lb` in pounds. Optional. Default value is `kg`.
 
 
 
