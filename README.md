@@ -1,6 +1,6 @@
 
 
-# Powerlifting formulas for calculating relative strength
+# IPF
 
 Calculate relative scores in IPF powerlifting competitions.
 

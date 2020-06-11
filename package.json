@@ -1,5 +1,5 @@
 {
-  "name": "@nikkiselev/powerlifting-formulas",
+  "name": "@nikkiselev/ipf",
   "version": "1.0.0",
   "description": "TypeScript starter template for creating a Node.js package",
   "keywords": [
@@ -15,8 +15,8 @@
     "esm/**"
   ],
   "author": "Nikolai Kiselev <nik@kiselev.dev> (https://github.com/nikkiselev)",
-  "repository": "nikkiselev/powerlifting-formulas",
-  "homepage": "https://github.com/nikkiselev/powerlifting-formulas",
+  "repository": "nikkiselev/ipf",
+  "homepage": "https://github.com/nikkiselev/ipf",
   "license": "MIT",
   "scripts": {
     "dev": "npm run watch",
