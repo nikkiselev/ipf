@@ -1,4 +1,8 @@
 # IPF
+[![GitHub license](https://img.shields.io/github/license/nikkiselev/ipf?style=flat-square)](https://github.com/nikkiselev/ipf/blob/master/LICENSE)
+
+
+
 
 Calculate relative scores in IPF powerlifting competitions.
 
