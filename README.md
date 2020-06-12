@@ -1,7 +1,9 @@
 # IPF
 
 
- ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/nikkiselev/ipf/Node.js%20CI?style=flat-square) [![GitHub license](https://img.shields.io/github/license/nikkiselev/ipf?style=flat-square)](https://github.com/nikkiselev/ipf/blob/master/LICENSE)
+ ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/nikkiselev/ipf/Node.js%20CI?style=flat-square) 
+![Coveralls github](https://img.shields.io/coveralls/github/nikkiselev/ipf?style=flat-square)
+ [![GitHub license](https://img.shields.io/github/license/nikkiselev/ipf?style=flat-square)](https://github.com/nikkiselev/ipf/blob/master/LICENSE)
 
 
 
