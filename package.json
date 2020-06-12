@@ -1,6 +1,6 @@
 {
   "name": "@nikkiselev/ipf",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Calculate relative scores in IPF powerlifting competitions.",
   "keywords": [
     "powerlifting",
