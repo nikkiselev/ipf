@@ -16,9 +16,6 @@ describe('wilks', () => {
   it('should calculate in pounds if specified', async () => {
     expect(wilks2(137, 882, 'f', 'lb')).toBe(515.92)
   })
-  it('should fail', async () => {
-    expect(wilks2(137, 882, 'f', 'lb')).toBe(3)
-  })
 })
 
 describe('wilks before 2020', () => {
