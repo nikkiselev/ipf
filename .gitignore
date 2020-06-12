@@ -8,3 +8,4 @@ esm
 .idea
 examples/**/package-json.lock
 package-lock.json
+coverage
